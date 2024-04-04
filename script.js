@@ -1,30 +1,26 @@
-
 window.onload = function () {
     var chart = new CanvasJS.Chart("chartContainer", {
+        animationEnabled: true,
         theme: "light2",
         title:{
-            text: "Simple Graph"
+            text: "Category Count"
         },
-        axisY:{
-            includeZero: false
+        axisY: {
+            title: "Count"
         },
         data: [{        
-            type: "line",       
-            dataPoints: [
-                { y: 450 },
-                { y: 414 },
-                { y: 520 },
-                { y: 460 },
-                { y: 450 },
-                { y: 500 },
-                { y: 480 },
-                { y: 480 },
-                { y: 410 },
-                { y: 500 },
-                { y: 480 },
-                { y: 510 }
+            type: "column",  
+            showInLegend: true, 
+            legendMarkerColor: "grey",
+            legendText: "Categories",
+            dataPoints: [      
+                { y: 10, label: "Category 1" },
+                { y: 15, label: "Category 2" },
+                { y: 5, label: "Category 3" },
+                { y: 20, label: "Category 4" }
             ]
         }]
     });
     chart.render();
 }
+
