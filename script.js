@@ -1,7 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // This code runs when the document is fully loaded
-    console.log('Document fully loaded and script running');
-    // Example: You could manipulate the iframe or bind events here
-});
+    // Find the iframe element
+    var iframe = document.querySelector('iframe');
+    // Get the current src attribute value
+    var src = iframe.getAttribute('src');
+    // Append a unique timestamp query string to the src
+    var newSrc = src + '&timestamp=' + new Date().getTime();
+    // Set the modified src attribute back to the iframe
+    iframe.setAttribute('src', newSrc);
 
+    console.log('Iframe src updated to bypass cache');
+});
 
